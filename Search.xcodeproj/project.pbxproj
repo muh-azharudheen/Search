@@ -14,6 +14,16 @@
 		04819AC02163E286000BC8E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04819ABE2163E286000BC8E7 /* LaunchScreen.storyboard */; };
 		04819ACB2163E286000BC8E7 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819ACA2163E286000BC8E7 /* SearchTests.swift */; };
 		04819AD62163E286000BC8E7 /* SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AD52163E286000BC8E7 /* SearchUITests.swift */; };
+		04819AE42163E40B000BC8E7 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AE32163E40B000BC8E7 /* BaseController.swift */; };
+		04819AEB2163F534000BC8E7 /* ItunesGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AEA2163F534000BC8E7 /* ItunesGradientView.swift */; };
+		04819AED2163F55C000BC8E7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AEC2163F55C000BC8E7 /* BaseView.swift */; };
+		04819AEF2163F92D000BC8E7 /* UIView-Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AEE2163F92D000BC8E7 /* UIView-Anchors.swift */; };
+		04819AF12163F94E000BC8E7 /* UIView-FrameAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AF02163F94E000BC8E7 /* UIView-FrameAnchors.swift */; };
+		04819AF3216408E3000BC8E7 /* EntityTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AF2216408E3000BC8E7 /* EntityTableController.swift */; };
+		04819AF5216419F3000BC8E7 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AF4216419F3000BC8E7 /* SearchResultController.swift */; };
+		04819AF721641A1C000BC8E7 /* DetailCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AF621641A1C000BC8E7 /* DetailCotroller.swift */; };
+		04819AFA21641C13000BC8E7 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AF921641C13000BC8E7 /* MediaType.swift */; };
+		04819AFC21641D6A000BC8E7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AFB21641D6A000BC8E7 /* ReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,16 @@
 		04819AD12163E286000BC8E7 /* SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04819AD52163E286000BC8E7 /* SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUITests.swift; sourceTree = "<group>"; };
 		04819AD72163E286000BC8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04819AE32163E40B000BC8E7 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		04819AEA2163F534000BC8E7 /* ItunesGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesGradientView.swift; sourceTree = "<group>"; };
+		04819AEC2163F55C000BC8E7 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		04819AEE2163F92D000BC8E7 /* UIView-Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-Anchors.swift"; sourceTree = "<group>"; };
+		04819AF02163F94E000BC8E7 /* UIView-FrameAnchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-FrameAnchors.swift"; sourceTree = "<group>"; };
+		04819AF2216408E3000BC8E7 /* EntityTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTableController.swift; sourceTree = "<group>"; };
+		04819AF4216419F3000BC8E7 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		04819AF621641A1C000BC8E7 /* DetailCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCotroller.swift; sourceTree = "<group>"; };
+		04819AF921641C13000BC8E7 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
+		04819AFB21641D6A000BC8E7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +117,11 @@
 		04819AB42163E284000BC8E7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				04819AF821641C04000BC8E7 /* Model */,
+				04819AE92163F51D000BC8E7 /* View */,
+				04819AE52163E455000BC8E7 /* Controller */,
+				04819AE62163E5F6000BC8E7 /* Extensions */,
 				04819AB52163E284000BC8E7 /* AppDelegate.swift */,
-				04819AB72163E284000BC8E7 /* ViewController.swift */,
 				04819AB92163E284000BC8E7 /* Main.storyboard */,
 				04819ABC2163E286000BC8E7 /* Assets.xcassets */,
 				04819ABE2163E286000BC8E7 /* LaunchScreen.storyboard */,
@@ -123,6 +146,45 @@
 				04819AD72163E286000BC8E7 /* Info.plist */,
 			);
 			path = SearchUITests;
+			sourceTree = "<group>";
+		};
+		04819AE52163E455000BC8E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04819AB72163E284000BC8E7 /* ViewController.swift */,
+				04819AE32163E40B000BC8E7 /* BaseController.swift */,
+				04819AF2216408E3000BC8E7 /* EntityTableController.swift */,
+				04819AF4216419F3000BC8E7 /* SearchResultController.swift */,
+				04819AF621641A1C000BC8E7 /* DetailCotroller.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04819AE62163E5F6000BC8E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04819AEE2163F92D000BC8E7 /* UIView-Anchors.swift */,
+				04819AF02163F94E000BC8E7 /* UIView-FrameAnchors.swift */,
+				04819AFB21641D6A000BC8E7 /* ReusableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04819AE92163F51D000BC8E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04819AEA2163F534000BC8E7 /* ItunesGradientView.swift */,
+				04819AEC2163F55C000BC8E7 /* BaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04819AF821641C04000BC8E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04819AF921641C13000BC8E7 /* MediaType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +319,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				04819AB82163E284000BC8E7 /* ViewController.swift in Sources */,
+				04819AEB2163F534000BC8E7 /* ItunesGradientView.swift in Sources */,
+				04819AE42163E40B000BC8E7 /* BaseController.swift in Sources */,
+				04819AFC21641D6A000BC8E7 /* ReusableView.swift in Sources */,
+				04819AF721641A1C000BC8E7 /* DetailCotroller.swift in Sources */,
+				04819AF5216419F3000BC8E7 /* SearchResultController.swift in Sources */,
+				04819AF12163F94E000BC8E7 /* UIView-FrameAnchors.swift in Sources */,
+				04819AEF2163F92D000BC8E7 /* UIView-Anchors.swift in Sources */,
+				04819AED2163F55C000BC8E7 /* BaseView.swift in Sources */,
 				04819AB62163E284000BC8E7 /* AppDelegate.swift in Sources */,
+				04819AFA21641C13000BC8E7 /* MediaType.swift in Sources */,
+				04819AF3216408E3000BC8E7 /* EntityTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Search/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,6 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Search/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

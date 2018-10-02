@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BaseController.swift
 //  Search
 //
 //  Created by Mac on 10/2/18.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class BaseController: UIViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor.white
+        setupViews()
     }
-
-
+    
+    func setupViews(){
+        
+    }
+    
 }
-
