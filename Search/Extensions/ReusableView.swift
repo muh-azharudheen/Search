@@ -36,7 +36,8 @@ extension NibLoadableView where Self: UIView {
     }
 }
 
-extension UICollectionViewCell : ReusableView{}
+
+extension UICollectionReusableView: ReusableView{}
 
 extension UITableViewCell: ReusableView { }
 
@@ -82,6 +83,17 @@ extension UICollectionView{
     func dequeReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
             fatalError("could not deque cell with identifier \(T.defaultReuseIdentifier)")
+        }
+        return cell
+    }
+    
+    func register<T: UICollectionReusableView>(_ : T.Type, kind: String){
+        register(T.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: T.defaultReuseIdentifier)
+    }
+    
+    func dequeReusableview<T: UICollectionReusableView>(with kind: String, for indexPath: IndexPath) -> T {
+        guard let cell = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
+            fatalError("could not deque reusable view with identifier \(T.defaultReuseIdentifier)")
         }
         return cell
     }

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045ADE8721648DA300EEAB68 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE8521648DA300EEAB68 /* GridCell.swift */; };
+		045ADE8821648DA300EEAB68 /* GridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045ADE8621648DA300EEAB68 /* GridCell.xib */; };
+		045ADE8B21648DBB00EEAB68 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE8921648DBB00EEAB68 /* ListCell.swift */; };
+		045ADE8C21648DBB00EEAB68 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045ADE8A21648DBB00EEAB68 /* ListCell.xib */; };
+		045ADE8F2164943700EEAB68 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE8E2164943700EEAB68 /* GridLayout.swift */; };
+		045ADE9121649DC900EEAB68 /* ListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE9021649DC900EEAB68 /* ListLayout.swift */; };
+		045ADE932164A05400EEAB68 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE922164A05400EEAB68 /* SearchResult.swift */; };
+		045ADE952164A73800EEAB68 /* UITextField-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE942164A73800EEAB68 /* UITextField-Ext.swift */; };
+		045ADE972164A7E300EEAB68 /* SelectedMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE962164A7E300EEAB68 /* SelectedMediaView.swift */; };
+		045ADE992164B7F800EEAB68 /* TagCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE982164B7F800EEAB68 /* TagCellLayout.swift */; };
+		045ADE9B2164DF9600EEAB68 /* UIColor-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045ADE9A2164DF9600EEAB68 /* UIColor-Ext.swift */; };
 		04819AB62163E284000BC8E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AB52163E284000BC8E7 /* AppDelegate.swift */; };
 		04819AB82163E284000BC8E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819AB72163E284000BC8E7 /* ViewController.swift */; };
 		04819ABB2163E284000BC8E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04819AB92163E284000BC8E7 /* Main.storyboard */; };
@@ -44,6 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045ADE8521648DA300EEAB68 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		045ADE8621648DA300EEAB68 /* GridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCell.xib; sourceTree = "<group>"; };
+		045ADE8921648DBB00EEAB68 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		045ADE8A21648DBB00EEAB68 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		045ADE8E2164943700EEAB68 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		045ADE9021649DC900EEAB68 /* ListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLayout.swift; sourceTree = "<group>"; };
+		045ADE922164A05400EEAB68 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		045ADE942164A73800EEAB68 /* UITextField-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField-Ext.swift"; sourceTree = "<group>"; };
+		045ADE962164A7E300EEAB68 /* SelectedMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMediaView.swift; sourceTree = "<group>"; };
+		045ADE982164B7F800EEAB68 /* TagCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCellLayout.swift; sourceTree = "<group>"; };
+		045ADE9A2164DF9600EEAB68 /* UIColor-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Ext.swift"; sourceTree = "<group>"; };
 		04819AB22163E284000BC8E7 /* Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Search.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04819AB52163E284000BC8E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04819AB72163E284000BC8E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +116,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045ADE8D2164942300EEAB68 /* CollectionViewLayouts */ = {
+			isa = PBXGroup;
+			children = (
+				045ADE8E2164943700EEAB68 /* GridLayout.swift */,
+				045ADE9021649DC900EEAB68 /* ListLayout.swift */,
+				045ADE982164B7F800EEAB68 /* TagCellLayout.swift */,
+			);
+			path = CollectionViewLayouts;
+			sourceTree = "<group>";
+		};
 		04819AA92163E284000BC8E7 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +198,8 @@
 				04819AEE2163F92D000BC8E7 /* UIView-Anchors.swift */,
 				04819AF02163F94E000BC8E7 /* UIView-FrameAnchors.swift */,
 				04819AFB21641D6A000BC8E7 /* ReusableView.swift */,
+				045ADE942164A73800EEAB68 /* UITextField-Ext.swift */,
+				045ADE9A2164DF9600EEAB68 /* UIColor-Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,7 +208,13 @@
 			isa = PBXGroup;
 			children = (
 				04819AEA2163F534000BC8E7 /* ItunesGradientView.swift */,
+				045ADE962164A7E300EEAB68 /* SelectedMediaView.swift */,
 				04819AEC2163F55C000BC8E7 /* BaseView.swift */,
+				045ADE8921648DBB00EEAB68 /* ListCell.swift */,
+				045ADE8A21648DBB00EEAB68 /* ListCell.xib */,
+				045ADE8521648DA300EEAB68 /* GridCell.swift */,
+				045ADE8621648DA300EEAB68 /* GridCell.xib */,
+				045ADE8D2164942300EEAB68 /* CollectionViewLayouts */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				04819AF921641C13000BC8E7 /* MediaType.swift */,
+				045ADE922164A05400EEAB68 /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +335,8 @@
 				04819AC02163E286000BC8E7 /* LaunchScreen.storyboard in Resources */,
 				04819ABD2163E286000BC8E7 /* Assets.xcassets in Resources */,
 				04819ABB2163E284000BC8E7 /* Main.storyboard in Resources */,
+				045ADE8821648DA300EEAB68 /* GridCell.xib in Resources */,
+				045ADE8C21648DBB00EEAB68 /* ListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,16 +363,25 @@
 			files = (
 				04819AB82163E284000BC8E7 /* ViewController.swift in Sources */,
 				04819AEB2163F534000BC8E7 /* ItunesGradientView.swift in Sources */,
+				045ADE972164A7E300EEAB68 /* SelectedMediaView.swift in Sources */,
 				04819AE42163E40B000BC8E7 /* BaseController.swift in Sources */,
+				045ADE8B21648DBB00EEAB68 /* ListCell.swift in Sources */,
+				045ADE9B2164DF9600EEAB68 /* UIColor-Ext.swift in Sources */,
 				04819AFC21641D6A000BC8E7 /* ReusableView.swift in Sources */,
+				045ADE9121649DC900EEAB68 /* ListLayout.swift in Sources */,
 				04819AF721641A1C000BC8E7 /* DetailCotroller.swift in Sources */,
 				04819AF5216419F3000BC8E7 /* SearchResultController.swift in Sources */,
 				04819AF12163F94E000BC8E7 /* UIView-FrameAnchors.swift in Sources */,
+				045ADE952164A73800EEAB68 /* UITextField-Ext.swift in Sources */,
+				045ADE8721648DA300EEAB68 /* GridCell.swift in Sources */,
 				04819AEF2163F92D000BC8E7 /* UIView-Anchors.swift in Sources */,
 				04819AED2163F55C000BC8E7 /* BaseView.swift in Sources */,
 				04819AB62163E284000BC8E7 /* AppDelegate.swift in Sources */,
+				045ADE8F2164943700EEAB68 /* GridLayout.swift in Sources */,
+				045ADE992164B7F800EEAB68 /* TagCellLayout.swift in Sources */,
 				04819AFA21641C13000BC8E7 /* MediaType.swift in Sources */,
 				04819AF3216408E3000BC8E7 /* EntityTableController.swift in Sources */,
+				045ADE932164A05400EEAB68 /* SearchResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,13 @@ extension UIView{
         }
     }
     
+    func setCenterToSuperView(){
+        if let sprview = superview{
+            centerXAnchor.constraint(equalTo: sprview.centerXAnchor).isActive = true
+            centerYAnchor.constraint(equalTo: sprview.centerYAnchor).isActive = true
+        }
+    }
+    
     func setHorizontalCenterToSuperView(){
         if let sprView = superview{
             centerXAnchor.constraint(equalTo: sprView.centerXAnchor).isActive = true
@@ -53,6 +60,14 @@ extension UIView{
     
     func setTopSpace(from anchor: NSLayoutYAxisAnchor, with constant: CGFloat){
         topAnchor.constraint(equalTo: anchor,constant:constant).isActive = true
+    }
+    
+    func setTrailingSpace(from anchor: NSLayoutXAxisAnchor, with constant: CGFloat){
+        trailingAnchor.constraint(equalTo: anchor, constant: -constant).isActive = true
+    }
+    
+    func setLeadingSpace(from anchor: NSLayoutXAxisAnchor, with constant: CGFloat){
+        leadingAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
     }
     
 }

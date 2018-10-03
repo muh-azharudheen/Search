@@ -12,9 +12,11 @@ class ViewController: BaseController{
     
     var entities : [MediaType] = MediaType.getEntities()
     
-    private var backGroundView: ItunesGradientView = {
-        let bgView = ItunesGradientView()
+    private var backGroundView: UIImageView = {
+        let bgView = UIImageView()
         bgView.translatesAutoresizingMaskIntoConstraints = false
+        bgView.image = UIImage(named: "bgImage")
+        bgView.contentMode = .scaleAspectFill
         return bgView
     }()
     
@@ -42,6 +44,11 @@ class ViewController: BaseController{
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.placeholder = "Search"
+        tf.layer.cornerRadius = 3
+        tf.tintColor = UIColor.itunesBlue
+        tf.clipsToBounds = true
+        tf.setLeftPaddingPoints(10)
+        tf.setRightPaddingPoints(10)
         tf.backgroundColor = UIColor.white
         return tf
     }()
@@ -57,8 +64,8 @@ class ViewController: BaseController{
         return label
     }()
     
-    private let entityView: EntityView = {
-        let view = EntityView()
+    private let entityView: SelectedMediaView = {
+        let view = SelectedMediaView()
         view.isUserInteractionEnabled = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -96,7 +103,6 @@ class ViewController: BaseController{
         
         view.addSubview(entityView)
         entityView.anchor(leading: topLabel.leadingAnchor, trailing: topLabel.trailingAnchor, top: searchLabel.bottomAnchor, bottom: nil, padding: UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0))
-        entityView.setSize(with: CGSize(width: 0, height: 75))
         
         view.addSubview(submitButton)
         submitButton.setHorizontalCenterToSuperView()
@@ -132,6 +138,7 @@ class ViewController: BaseController{
         vc.entities = entities
         vc.entitySelection = { [weak self] entities in
             self?.entities = entities
+            self?.entityView.dataSource = entities.filter({$0.isSelected == true })
         }
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -151,8 +158,3 @@ class ViewController: BaseController{
 }
 
 
-final class EntityView: BaseView {
-    override func setup() {
-        backgroundColor = UIColor.red
-    }
-}
