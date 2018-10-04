@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: BaseController{
     
     var entities : [MediaType] = MediaType.getEntities()
+    var spinner: UIActivityIndicatorView?
     
     private var backGroundView: UIImageView = {
         let bgView = UIImageView()
@@ -116,45 +118,62 @@ class ViewController: BaseController{
         
     }
     
+    var service = MediaService()
+    
     @objc
     private func submitBtnTapped(){
-//        guard let searchText = textField.text, searchText != "" else {
-//            print("Please enter search query")
-//            return
-//        }
-//        print("Btn tapped")
-//        print(searchText)
-        
-        let controller = SearchResultsController()
-        self.navigationController?.pushViewController(controller, animated: true)
-        
-    }
-    
-    @objc
-    private func entityViewTapped(){
-        print("Entity view tapped")
-        print("Go to entity table controller")
-        let vc = EntityTableController()
-        vc.entities = entities
-        vc.entitySelection = { [weak self] entities in
-            self?.entities = entities
-            self?.entityView.dataSource = entities.filter({$0.isSelected == true })
+        guard let searchText = textField.text, searchText != "" else {
+            print("Please enter search query")
+            return
+        }
+        guard let media = entityView.dataSource else {
+            print("please select atleast one media type")
+            return
         }
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        spinner = showLoader(view: self.view)
+        
+        service.getResult(with: searchText, types: media) { [weak self] (result) in
+            self?.spinner?.dismissLoader()
+            switch result{
+            case .failure(let err):
+                print("Error")
+            case .success(let dict):
+                let controller = SearchResultsController()
+                controller.dataSource = dict
+                self?.navigationController?.pushViewController(controller, animated: true)
+            }
+            
+        }
     }
     
-    //MARK:- Hide Navigation bar on first screen
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
+
+    
+
+
+@objc
+private func entityViewTapped(){
+    print("Entity view tapped")
+    print("Go to entity table controller")
+    let vc = EntityTableController()
+    vc.entities = entities
+    vc.entitySelection = { [weak self] entities in
+        self?.entities = entities
+        self?.entityView.dataSource = entities.filter({$0.isSelected == true })
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
+    self.navigationController?.pushViewController(vc, animated: true)
 }
 
+//MARK:- Hide Navigation bar on first screen
+override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    self.navigationController?.navigationBar.isHidden = false
+}
 
+override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationController?.navigationBar.isHidden = true
+}
+
+}

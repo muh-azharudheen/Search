@@ -8,9 +8,47 @@
 
 import UIKit
 
+struct Hello {
+    
+    private var type: Entity
+    var title : String{
+        return type.title
+    }
+    var data : [SearchResult]
+    
+    init(entity: Entity, dict: [[String: AnyObject]]) {
+        self.type = entity
+        data = []
+        for obj in dict{
+            switch type{
+            case .album:
+                data.append(SearchResult(AlbumDict: obj))
+            case .artist:
+                data.append(SearchResult(ArtistDict: obj))
+            case .book:
+                data.append(SearchResult(BookDict: obj))
+            case .movie:
+                data.append(SearchResult(MovieDict: obj))
+            case .musicVideo:
+                data.append(SearchResult(musicVideoDict: obj))
+            case .podcast:
+                data.append(SearchResult(podCastDict: obj))
+            case .song:
+                data.append(SearchResult(songDict: obj))
+            }
+        }
+        
+    }
+    
+}
+
+
+
 final class SearchResultsController: BaseController{
     
-    fileprivate var dataSource : [SearchResult] = SearchResult.getMockup()
+//    fileprivate var dataSource : [SearchResult] = SearchResult.getMockup()
+    
+    var dataSource  = [Hello]()
     
     var listlayout: ListLayout = {
         return ListLayout()
@@ -98,21 +136,21 @@ final class SearchResultsController: BaseController{
 extension SearchResultsController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.count
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataSource[section].data.count
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let data = dataSource[indexPath.section].data[indexPath.item]
+        
         if  collectionView.collectionViewLayout == gridLayout {
             let cell: GridCell = collectionView.dequeReusableCell(forIndexPath: indexPath)
-            cell.result = dataSource[indexPath.item]
-            cell.titleLabel.text = "grid \(indexPath.row)"
+            cell.result = data
             return cell
         } else {
             let cell: ListCell = collectionView.dequeReusableCell(forIndexPath: indexPath)
-            cell.result = dataSource[indexPath.item]
-            cell.titleLabel.text = "list \(indexPath.row)"
+            cell.result = data
             return cell
         }
         

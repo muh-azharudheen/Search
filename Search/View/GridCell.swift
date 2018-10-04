@@ -14,7 +14,7 @@ class GridCell: UICollectionViewCell {
     
     var result: SearchResult!{
         didSet{
-//            titleLabel.text = result.title + "Grid"
+            titleLabel.text = result.title + "Grid"
         }
     }
 

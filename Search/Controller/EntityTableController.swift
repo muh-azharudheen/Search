@@ -33,7 +33,7 @@ final class EntityTableController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeReusableCell(forIndexPath: indexPath)
-        cell.textLabel?.text = entities[indexPath.row].entityname
+        cell.textLabel?.text = entities[indexPath.row].entity.title
         cell.accessoryType = entities[indexPath.row].isSelected ? .checkmark : .none
         return cell
     }

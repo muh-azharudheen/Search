@@ -9,9 +9,7 @@
 import UIKit
 
 final class SelectedMediaView: BaseView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
-  
-    
+
     var heightConstraint: NSLayoutConstraint?
     
     var dataSource: [MediaType]? {
@@ -99,7 +97,7 @@ final class SelectedMediaView: BaseView, UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel()
-        label.text = dataSource![indexPath.item].entityname
+        label.text = dataSource![indexPath.item].entity.title
         label.sizeToFit()
         return CGSize(width: label.frame.width + 16, height: 30)
     }
@@ -111,7 +109,7 @@ class SelectedMediaCell: UICollectionViewCell{
     
     var media: MediaType!{
         didSet{
-            label.text = media.entityname
+            label.text = media.entity.title
         }
     }
     

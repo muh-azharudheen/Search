@@ -11,6 +11,9 @@ import Foundation
 final class DetailController: BaseController{
     
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
 }
