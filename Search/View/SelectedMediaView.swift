@@ -45,7 +45,7 @@ final class SelectedMediaView: BaseView, UICollectionViewDataSource, UICollectio
     private let placeHolderLabel: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.text = "Select Media"
+        lbl.text = Constants.Strings.selectMedia
         lbl.textColor = UIColor.lightGray
         return lbl
     }()

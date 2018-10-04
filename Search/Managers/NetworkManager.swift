@@ -61,15 +61,6 @@ class NetworkManager{
     
 }
 
-
-
-struct Endpoint{
-    
-    static let BASE_URL = "itunes.apple.com"
-    static let PATH = "search"
-}
-
-
 enum RequestType : String{
     case post = "POST"
     case get = "GET"

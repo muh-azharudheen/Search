@@ -14,8 +14,8 @@ class GridLayout: UICollectionViewFlowLayout{
     
     override init() {
         super.init()
-        minimumLineSpacing = 1
-        minimumInteritemSpacing = 1
+        minimumLineSpacing = 2
+        minimumInteritemSpacing = 2
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,36 +32,21 @@ class GridLayout: UICollectionViewFlowLayout{
     
     override func prepare() {
         super.prepare()
-        headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 20)
+        headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 30)
     }
     
-    
-//    override func prepare() {
-//        super.prepare()
-//
-//        minimumInteritemSpacing = 1
-//        minimumLineSpacing = 1
-//        scrollDirection = .vertical
-//        itemSize = CGSize(width: itemWidth, height: itemHeight)
-//        headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 20)
-//    }
-    
     var itemWidth: CGFloat{
-        return (collectionView!.frame.width / numberofColumns) - 1
+        return (collectionView!.frame.width / numberofColumns) - 2
     }
     
     var itemHeight: CGFloat{
-        return itemWidth
+        return itemWidth + 60
     }
     
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         return proposedContentOffset
     }
-    
-//    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-//        return collectionView!.contentOffset
-//    }
     
 }
 

@@ -13,30 +13,58 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GridCell" customModule="Search" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="277" height="251"/>
+            <rect key="frame" x="0.0" y="0.0" width="250" height="310"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="277" height="251"/>
+                <rect key="frame" x="0.0" y="0.0" width="250" height="310"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSw-sO-ug5">
-                        <rect key="frame" x="117.5" y="115" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCm-UE-gzh" customClass="ShadowView" customModule="Search" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="234" height="294"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itunes-logo-2809" translatesAutoresizingMaskIntoConstraints="NO" id="jOx-j3-ovC" customClass="BorderedImageView" customModule="Search" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="218" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jOx-j3-ovC" secondAttribute="height" id="277-tz-QJ8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqE-Qh-h47" customClass="TitleLabel" customModule="Search" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="226" width="234" height="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KqE-Qh-h47" firstAttribute="top" secondItem="jOx-j3-ovC" secondAttribute="bottom" id="8Qw-Ol-25m"/>
+                            <constraint firstAttribute="trailing" secondItem="jOx-j3-ovC" secondAttribute="trailing" constant="8" id="NTE-3Z-HHl"/>
+                            <constraint firstAttribute="bottom" secondItem="KqE-Qh-h47" secondAttribute="bottom" id="PgN-xJ-AiA"/>
+                            <constraint firstItem="jOx-j3-ovC" firstAttribute="top" secondItem="hCm-UE-gzh" secondAttribute="top" constant="8" id="Sf8-BB-FnO"/>
+                            <constraint firstItem="jOx-j3-ovC" firstAttribute="leading" secondItem="hCm-UE-gzh" secondAttribute="leading" constant="8" id="cPc-vY-WDc"/>
+                            <constraint firstItem="KqE-Qh-h47" firstAttribute="leading" secondItem="hCm-UE-gzh" secondAttribute="leading" id="dIA-kV-q45"/>
+                            <constraint firstAttribute="trailing" secondItem="KqE-Qh-h47" secondAttribute="trailing" id="qIX-ov-8TE"/>
+                            <constraint firstItem="KqE-Qh-h47" firstAttribute="top" secondItem="jOx-j3-ovC" secondAttribute="bottom" id="y0G-tG-tHV"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="cSw-sO-ug5" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="JF6-AR-oYV"/>
-                <constraint firstItem="cSw-sO-ug5" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="tG6-Rz-DIB"/>
+                <constraint firstItem="hCm-UE-gzh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Csa-ik-uhf"/>
+                <constraint firstItem="hCm-UE-gzh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="O1Z-oJ-FP2"/>
+                <constraint firstAttribute="bottom" secondItem="hCm-UE-gzh" secondAttribute="bottom" constant="8" id="RIa-Zm-QLu"/>
+                <constraint firstAttribute="trailing" secondItem="hCm-UE-gzh" secondAttribute="trailing" constant="8" id="rZE-a9-tad"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="277" height="251"/>
+            <size key="customSize" width="247" height="273"/>
             <connections>
-                <outlet property="titleLabel" destination="cSw-sO-ug5" id="e7A-mz-vCc"/>
+                <outlet property="imageView" destination="jOx-j3-ovC" id="nJK-Rb-Yha"/>
+                <outlet property="titleLabel" destination="KqE-Qh-h47" id="UHi-Dj-5i2"/>
             </connections>
-            <point key="canvasLocation" x="319.19999999999999" y="207.34632683658174"/>
+            <point key="canvasLocation" x="295.19999999999999" y="217.24137931034485"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="itunes-logo-2809" width="720" height="504"/>
+    </resources>
 </document>

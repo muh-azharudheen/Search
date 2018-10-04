@@ -32,16 +32,15 @@ class MediaService{
         }
     }
     
-    typealias searchResultDict = ([String: [SearchResult]]) -> Void
+    typealias finalSearchResult = (Result<[SearchResult], APIError>) -> Void
     
-    typealias result = (Result<[Hello], APIError>) -> Void
-    
-    
-    func getResult(with term: String, types: [MediaType], completion: @escaping result){
+    // MARK:- In this function creating a dispatch group and waiting for each api task to finish,
+    //after that a second operation will be called.
+    func getResult(with term: String, types: [MediaType], completion: @escaping finalSearchResult){
         
         var error: APIError?
         
-        var hello : [Hello] = []
+        var finalResult : [SearchResult] = []
         
         let op1 = BlockOperation {
             let group = DispatchGroup()
@@ -50,8 +49,10 @@ class MediaService{
                 self.getEntity(with: term, entity: type.entity, completion: { (result) in
                     switch result{
                     case .success(let data):
-                        let obj = Hello(entity: type.entity, dict: data)
-                        hello.append(obj)
+                        if !data.isEmpty{
+                            let obj = SearchResult(entity: type.entity, dict: data)
+                            finalResult.append(obj)
+                        }
                     case .failure(let err):
                         error = err
                     }
@@ -63,10 +64,10 @@ class MediaService{
         
         let op2 = BlockOperation {
             DispatchQueue.main.async {
-                if let err = error , hello.isEmpty {
+                if let err = error , finalResult.isEmpty {
                     completion(.failure(err))
                 } else {
-                    completion(.success(hello))
+                    completion(.success(finalResult))
                 }
             }
         }
@@ -75,8 +76,5 @@ class MediaService{
         op1.start()
         op2.start()
     }
-    
-    
-    
 }
 

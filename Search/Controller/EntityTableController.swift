@@ -21,10 +21,11 @@ final class EntityTableController: UITableViewController{
         
         
         tableView.register(UITableViewCell.self)
-        title = "Select media Types"
+        title = Constants.Strings.titleMediatypeController
         
         let btn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBtnTapped))
         navigationItem.rightBarButtonItem = btn
+        view.backgroundColor = UIColor.itunesGreen
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +35,7 @@ final class EntityTableController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeReusableCell(forIndexPath: indexPath)
         cell.textLabel?.text = entities[indexPath.row].entity.title
+        cell.backgroundColor = UIColor.itunesGreen
         cell.accessoryType = entities[indexPath.row].isSelected ? .checkmark : .none
         return cell
     }
